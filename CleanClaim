@@ -1,0 +1,131 @@
+Sub aa_CleanClaim()
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "(\[)(\[)(*)(\])(\])"
+    .Replacement.Text = ""
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Dim oRng As Word.Range
+Set oRng = ActiveDocument.Range
+  With oRng.Find
+    .ClearFormatting
+    .Replacement.ClearFormatting
+    .Text = "*"
+    .MatchWildcards = True
+    .Font.StrikeThrough = True
+    .Replacement.Text = ""
+    .Execute Replace:=wdReplaceAll
+  End With
+  
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "  "
+    .Replacement.Text = " "
+    .Forward = True
+    .Wrap = wdFindContinue
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "  "
+    .Replacement.Text = " "
+    .Forward = True
+    .Wrap = wdFindContinue
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "  "
+    .Replacement.Text = " "
+    .Forward = True
+    .Wrap = wdFindContinue
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = " ."
+    .Replacement.Text = "."
+    .Forward = True
+    .Wrap = wdFindContinue
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = " ,"
+    .Replacement.Text = ","
+    .Forward = True
+    .Wrap = wdFindContinue
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = " ;"
+    .Replacement.Text = ";"
+    .Forward = True
+    .Wrap = wdFindContinue
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = " :"
+    .Replacement.Text = ":"
+    .Forward = True
+    .Wrap = wdFindContinue
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "Currently Amended"
+    .Replacement.Text = "Previously Presented"
+    .Forward = True
+    .Wrap = wdFindContinue
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "New"
+    .Replacement.Text = "Previously Presented"
+    .Forward = True
+    .Wrap = wdFindContinue
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "*"
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+
+Do While Selection.Find.Execute = True
+If Selection.Font.Underline Then
+Selection.Font.Underline = False
+End If
+Loop
+
+End Sub
