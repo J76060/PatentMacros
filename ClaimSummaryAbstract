@@ -1,0 +1,125 @@
+Sub aa_ClaimSummary()
+
+ActiveDocument.Content.InsertBefore Text:="In general, in one aspect, embodiments relate to "
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "^p"
+    .Replacement.Text = " "
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = False
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "A "
+    .Replacement.Text = "a "
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "comprising:"
+    .Replacement.Text = "that includes"
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "comprising"
+    .Replacement.Text = "that includes"
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "comprises:"
+    .Replacement.Text = "includes"
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "comprises"
+    .Replacement.Text = "includes"
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "wherein"
+    .Replacement.Text = "where"
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = "  "
+    .Replacement.Text = " "
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = ". "
+    .Replacement.Text = "."
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = ";"
+    .Replacement.Text = ","
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+
+Selection.Find.ClearFormatting
+Selection.Find.Replacement.ClearFormatting
+With Selection.Find
+    .Text = ":"
+    .Replacement.Text = ","
+    .Forward = True
+    .Wrap = wdFindContinue
+    .MatchWildcards = True
+End With
+Selection.Find.Execute Replace:=wdReplaceAll
+End Sub
