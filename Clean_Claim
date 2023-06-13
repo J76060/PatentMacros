@@ -1,4 +1,4 @@
-Sub aa_CleanClaim()
+Sub Clean_Claim()
 
 Selection.Find.ClearFormatting
 Selection.Find.Replacement.ClearFormatting
