@@ -11,6 +11,5 @@ Sub Change_Quotes_to_Straight()
         .Format = True
         .Execute Replace:=wdReplaceAll
     End With
-    Options.AutoFormatAsYouTypeReplaceQuotes = True
     
 End Sub
