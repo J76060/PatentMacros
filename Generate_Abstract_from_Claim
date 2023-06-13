@@ -1,6 +1,4 @@
-Sub aa_ClaimSummary()
-
-ActiveDocument.Content.InsertBefore Text:="In general, in one aspect, embodiments relate to "
+Sub Generate_Abstract_from_Claim()
 
 Selection.Find.ClearFormatting
 Selection.Find.Replacement.ClearFormatting
