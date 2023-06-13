@@ -1,0 +1,16 @@
+Sub Change_Quotes_to_Straight()
+
+    Dim rg As Range
+    Set rg = ActiveDocument.Range
+    Options.AutoFormatAsYouTypeReplaceQuotes = False
+    With rg.Find
+        .Text = """"
+        .Replacement.Text = """"
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = True
+        .Execute Replace:=wdReplaceAll
+    End With
+    Options.AutoFormatAsYouTypeReplaceQuotes = True
+    
+End Sub
