@@ -14,17 +14,6 @@ Selection.Find.Execute Replace:=wdReplaceAll
 Selection.Find.ClearFormatting
 Selection.Find.Replacement.ClearFormatting
 With Selection.Find
-    .Text = "A "
-    .Replacement.Text = "a "
-    .Forward = True
-    .Wrap = wdFindContinue
-    .MatchWildcards = True
-End With
-Selection.Find.Execute Replace:=wdReplaceAll
-
-Selection.Find.ClearFormatting
-Selection.Find.Replacement.ClearFormatting
-With Selection.Find
     .Text = "comprising:"
     .Replacement.Text = "that includes"
     .Forward = True
